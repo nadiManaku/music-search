@@ -1,0 +1,26 @@
+:root {
+  --color: #d3d3d3;
+}
+.resultList {
+  width: 75%;
+  margin: auto;
+
+  &__suggestions {
+    padding: 0px 10px;
+    border: 1px solid var(--color);
+    border-radius: 5px;
+    background: #fff;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 16px;
+  }
+
+  a {
+    display: block;
+    color: #0066cc;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
