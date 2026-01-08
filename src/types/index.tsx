@@ -7,6 +7,8 @@ export interface IMusicItem {
     artistId: number;
     artistName: string;
     collectionName: string;
+    trackId: number;
+    collectionId: number;
 }
 
 export interface IResultList {
