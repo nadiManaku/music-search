@@ -17,11 +17,7 @@ const Section = <T extends { artistId?: number }>({
   return (
     <section>
       <h2>{title}</h2>
-      {visibleItems.length === 0 ? (
-        <p>{emptyMessage}</p>
-      ) : (
-        visibleItems.map(renderItem)
-      )}
+      {visibleItems.length === 0 ? <p>{emptyMessage}</p> : visibleItems.map(renderItem)}
     </section>
   );
 };

@@ -1,19 +1,19 @@
-import { useCallback, useState } from "react";
-import { type IMusicItem, type IResultList } from "../../types";
-import ResultItem from "../ResultItem";
-import "./styles/index.scss";
-import fetchMusic from "../../services/fetch";
-import Suggestions from "../Suggestions";
+import { useCallback, useState } from 'react';
+import { type IMusicItem, type IResultList } from '../../types';
+import ResultItem from '../ResultItem';
+import './styles/index.scss';
+import fetchMusic from '../../services/fetch';
+import Suggestions from '../Suggestions';
+import Loader from '../Loader';
 
 interface ResultListProps {
-  searchResults: IResultList
-  emptyMessage: string
+  searchResults: IResultList;
+  emptyMessage: string;
 }
 
 const ResultList = ({ searchResults, emptyMessage }: ResultListProps) => {
   const { artist, collection, track } = searchResults;
   const [preferredResults, setPreferredResult] = useState<IMusicItem[]>([]);
-  //const showResultsItems = preferredResults.length > 0;
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
 
   const fetchPreferredResults = useCallback(async (query: string) => {
@@ -31,17 +31,21 @@ const ResultList = ({ searchResults, emptyMessage }: ResultListProps) => {
     return <div>Something went wrong</div>;
   }
 
+  if (status === 'loading') {
+    return <Loader />;
+  }
+
   return (
     <div className="resultList">
       {preferredResults.length === 0 ? (
         <div className="resultList__suggestions">
-        <Suggestions
-          artist={artist}
-          track={track}
-          collection={collection}
-          emptyMessage={emptyMessage}
-          onSelect={fetchPreferredResults}
-        />
+          <Suggestions
+            artist={artist}
+            track={track}
+            collection={collection}
+            emptyMessage={emptyMessage}
+            onSelect={fetchPreferredResults}
+          />
         </div>
       ) : (
         <ResultItem musicItemList={preferredResults} />

@@ -1,6 +1,6 @@
-import { memo } from "react";
-import { type IMusicItem } from "../../types";
-import Section from "../Section";
+import { memo } from 'react';
+import { type IMusicItem } from '../../types';
+import Section from '../Section';
 
 interface SuggestionsProps {
   artist: IMusicItem[];
@@ -10,13 +10,7 @@ interface SuggestionsProps {
   onSelect: (query: string) => void;
 }
 
-const Suggestions = ({
-  artist,
-  track,
-  collection,
-  emptyMessage,
-  onSelect,
-}: SuggestionsProps) => {
+const Suggestions = ({ artist, track, collection, emptyMessage, onSelect }: SuggestionsProps) => {
   return (
     <>
       <Section
@@ -24,11 +18,7 @@ const Suggestions = ({
         items={artist}
         emptyMessage={emptyMessage}
         renderItem={(item) => (
-          <button
-            type="button"
-            key={item.artistId}
-            onClick={() => onSelect(item.artistName)}
-          >
+          <button type="button" key={item.artistId} onClick={() => onSelect(item.artistName)}>
             {item.artistName}
           </button>
         )}
@@ -39,7 +29,9 @@ const Suggestions = ({
         items={track}
         emptyMessage={emptyMessage}
         renderItem={(item) => (
-          <span key={item.trackId}>{item.trackName}</span>
+          <button type="button" key={item.trackId} onClick={() => onSelect(item.trackName)}>
+            {item.trackName}
+          </button>
         )}
       />
 
@@ -48,7 +40,13 @@ const Suggestions = ({
         items={collection}
         emptyMessage={emptyMessage}
         renderItem={(item) => (
-          <span key={item.collectionId}>{item.collectionName}</span>
+          <button
+            type="button"
+            key={item.collectionId}
+            onClick={() => onSelect(item.collectionName)}
+          >
+            {item.collectionName}
+          </button>
         )}
       />
     </>

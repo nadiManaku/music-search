@@ -1,15 +1,13 @@
-import { useState } from "react";
-import "./App.css";
-import Loader from "./components/Loader";
-import SearchBar from "./components/Search";
-import ResultList from "./components/ResultList";
-import { useMusicSearch } from "./hooks/useMusicSearch";
+import { useState } from 'react';
+import './App.css';
+import Loader from './components/Loader';
+import SearchBar from './components/Search';
+import ResultList from './components/ResultList';
+import { useMusicSearch } from './hooks/useMusicSearch';
 
 function App() {
-
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const { results, isLoading, hasError } = useMusicSearch(searchQuery);
-
 
   if (hasError) {
     return (
@@ -30,12 +28,7 @@ function App() {
       <h1>MusicSearch</h1>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       {isLoading && <Loader />}
-      {showResults && (
-        <ResultList
-          searchResults={results}
-          emptyMessage="No results found"
-        />
-      )}
+      {showResults && <ResultList searchResults={results} emptyMessage="No results found" />}
     </div>
   );
 }
