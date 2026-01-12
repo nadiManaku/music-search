@@ -28,8 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: #001124;
-  background-image: url(https://img.freepik.com/free-vector/flat-abstract-wireframe-background_23-2149014845.jpg?w=2000);
+  background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
   background-repeat: no-repeat;
   background-size: cover;
 }

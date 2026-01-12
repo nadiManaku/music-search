@@ -10,7 +10,7 @@ const Loader = () => (
     enableBackground="new 0 0 0 0"
     xmlSpace="preserve"
   >
-    <rect x="40" y="20" width="4" height="10" fill="#fdee21">
+    <rect x="40" y="20" width="4" height="10" fill="#fff">
       <animateTransform
         attributeType="xml"
         attributeName="transform"
@@ -21,7 +21,7 @@ const Loader = () => (
         repeatCount="indefinite"
       />
     </rect>
-    <rect x="50" y="20" width="4" height="10" fill="#fdee21">
+    <rect x="50" y="20" width="4" height="10" fill="#fff">
       <animateTransform
         attributeType="xml"
         attributeName="transform"
@@ -32,7 +32,7 @@ const Loader = () => (
         repeatCount="indefinite"
       />
     </rect>
-    <rect x="60" y="20" width="4" height="10" fill="#fdee21">
+    <rect x="60" y="20" width="4" height="10" fill="#fff">
       <animateTransform
         attributeType="xml"
         attributeName="transform"

@@ -14,7 +14,7 @@ const ResultItem = ({ musicItemList }: IResultItem) => (
           <h3>{item.trackName}</h3>
           <p>{`Released on: ${new Date(item.releaseDate).getUTCFullYear()} on Album: ${item.collectionName}`}</p>
           <a href={item.trackViewUrl} target="_blank" rel="noopener noreferrer">
-            view in Tunes
+            view in iTunes
           </a>
         </div>
       </li>

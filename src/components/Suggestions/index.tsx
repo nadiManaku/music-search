@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { type IMusicItem } from '../../types';
 import Section from '../Section';
+import './styles/index.scss';
 
 interface SuggestionsProps {
   artist: IMusicItem[];
